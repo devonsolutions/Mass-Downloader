@@ -18,5 +18,18 @@ Multiple inputs: https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-
 
 For Loops: https://www.w3schools.com/python/python_for_loops.asp
 
+Using RegEx re.sub() to rename filepaths: https://pythonexamples.org/python-re-sub/
+
 Slicing and Indexing: https://www.freecodecamp.org/news/slicing-and-indexing-in-python/
 
+https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-finance-position-desc.pdf
+
+
+
+https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-position-desc_0.pdf 
+https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/EVI927eOjA9Am8rn7Yl9klcBCSvbscGhusESXotft-44ig?e=geukY7 
+https://www.csustan.edu/sites/default/files/2023-03/asi-direct-ahss-position-desc.pdf 
+https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-assist-position-desc.pdf 
+https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pdf 
+
+https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pd
