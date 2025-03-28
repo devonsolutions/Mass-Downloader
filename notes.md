@@ -33,3 +33,11 @@ https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-assist-posi
 https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pdf 
 
 https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pd
+
+https://www.geeksforgeeks.org/simple-multithreaded-download-manager-in-python/
+
+D7 file: 
+https://www.csustan.edu/sites/default/files/groups/Financial%20%26%20Support%20Services%20Gateway/bids-and-results/addenda_no_1_0.pdf 
+https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pdf
+
+HTTP response statues codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
