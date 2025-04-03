@@ -5,26 +5,13 @@ import re
 # links only register as individual items when separated by a space
 # this mass downloader only has to work on D10 files for now, bc this will be used to download all the D10 files in archive (sheet 2) section
 
-files = input("What files would you like to download? ").split()
+files = input("What files would you like to download? ").split() 
 
 filesTotal = len(files)
 
 drupalFiles = 'https://www.csustan.edu/sites/default/files/'
 
 sharepointFiles = 'https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/'
-
-'''
-Variable filePath not accessible within the loop > if response statement > if drupalFiles statement
-
-def rename_drupalFiles():
-    pattern = 'https://www.csustan.edu/sites/default/files/' + '[0-9]+' + '-' + '[0-9]+' + '/'
-    string = files[i]
-    repl = ''
-
-    filePath = re.sub(pattern, repl, string)
-    print(filePath)
-
-'''
 
 for i in range(filesTotal):
 
@@ -53,7 +40,8 @@ for i in range(filesTotal):
 
                 pattern = 'https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/'
                 string = files[i]
-                repl = '' # need to find out how file names are downloaded from SharePoint
+                repl = '' # need to find out how file names are downloaded from SharePoint (check requests library)
+                #https://dev.to/sa11erto5n/download-manager-using-python-20h3
 
                 filePath = re.sub(pattern, repl, string)
 
@@ -69,6 +57,9 @@ for i in range(filesTotal):
     # Drupal 7 files will return this message
     else:
         print('File not found.')
+
+
+
 
 
 '''
@@ -94,5 +85,18 @@ MISCELLANEOUS
 print(files[i])
 
 print(" ".join(fileAddresses))
+
+'''
+
+'''
+Variable filePath not accessible within the loop > if response statement > if drupalFiles statement
+
+def rename_drupalFiles():
+    pattern = 'https://www.csustan.edu/sites/default/files/' + '[0-9]+' + '-' + '[0-9]+' + '/'
+    string = files[i]
+    repl = ''
+
+    filePath = re.sub(pattern, repl, string)
+    print(filePath)
 
 '''
