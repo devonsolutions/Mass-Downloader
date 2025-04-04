@@ -5,7 +5,29 @@ import re
 # links only register as individual items when separated by a space
 # this mass downloader only has to work on D10 files for now, bc this will be used to download all the D10 files in archive (sheet 2) section
 
-files = input("What files would you like to download? ").split() 
+files = input("What files would you like to download? ")
+
+individualFiles = re.split("https://", files)
+
+totalFiles = []
+
+for file in individualFiles:
+    totalFiles.append(file)
+
+print(totalFiles)
+
+"""
+for file in drupalLinks:
+    totalLinks.append(file.get('href'))
+
+sharepointLinks = files.findall(href=re.compile("/StanStatePublicDocs"))
+for link in sharepointLinks:
+    totalLinks.append(link.get('href'))
+
+print(totalLinks)
+"""
+
+"""
 
 filesTotal = len(files)
 
@@ -59,7 +81,7 @@ for i in range(filesTotal):
         print('File not found.')
 
 
-
+"""
 
 
 '''

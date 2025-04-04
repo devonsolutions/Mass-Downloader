@@ -26,8 +26,8 @@ https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-finance-positi
 
 
 
-https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-position-desc_0.pdf 
-https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/EVI927eOjA9Am8rn7Yl9klcBCSvbscGhusESXotft-44ig?e=geukY7 
+https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-position-desc_0.pdfhttps://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/EVI927eOjA9Am8rn7Yl9klcBCSvbscGhusESXotft-44ig?e=geukY7
+
 https://www.csustan.edu/sites/default/files/2023-03/asi-direct-ahss-position-desc.pdf 
 https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-assist-position-desc.pdf 
 https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pdf 
