@@ -31,3 +31,11 @@ for fullnameFile in fullnameFiles:
 
     else:
        print("File not available")
+
+'''
+https://www.csustan.edu/sites/default/files/2023-01/new-standard-room-use-final.pdf
+https://www.csustan.edu/sites/default/files/2023-01/faculty-resources-flyer.pdf
+https://www.csustan.edu/sites/default/files/2023-01/sharelinkpro-flyer.pdf
+https://www.csustan.edu/sites/default/files/2023-01/standard-room-use-flyer.pdf
+
+'''
