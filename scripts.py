@@ -18,6 +18,8 @@ for fullnameFile in fullnameFiles:
 
     if response.status_code == 200 or 403:
 
+        # Maybe add another ifelse statement so that we can download status code [200] Drupal7 files, as well
+
         pattern = "https://www.csustan.edu/sites/default/files/" + '[0-9]+' + '-' + '[0-9]+' + '/'
         repl = ''
         removeURL = re.sub(pattern, repl, fullnameFile)
