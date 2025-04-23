@@ -1,3 +1,7 @@
+Total: 
+
+
+
 Set up openpyxl 
 
 https://openpyxl.readthedocs.io/en/stable/tutorial.html
@@ -41,3 +45,5 @@ https://www.csustan.edu/sites/default/files/groups/Financial%20%26%20Support%20S
 https://www.csustan.edu/sites/default/files/2023-03/asi-exec-student-coord-position-desc.pdf
 
 HTTP response statues codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+
+Sources: https://uibakery.io/regex-library/url-regex-python
