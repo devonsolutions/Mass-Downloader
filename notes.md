@@ -1,6 +1,7 @@
 Total: 6
 
 To-Do List
+- add certificate verification (https://urllib3.readthedocs.io/en/latest/user-guide.html#ssl)
 - use os library to redirect downloads to Download folder instead of inside massdownloader downloads folder
 
 Sources:
