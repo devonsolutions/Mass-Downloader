@@ -3,31 +3,8 @@ import re
 
 # need to fix input format (need to split input to add separate links as seperate items in the list)
 # links only register as individual items when separated by a space
-# this mass downloader only has to work on D10 files for now, bc this will be used to download all the D10 files in archive (sheet 2) section
 
 files = input("What files would you like to download? ")
-
-individualFiles = re.split("https://", files)
-
-totalFiles = []
-
-for file in individualFiles:
-    totalFiles.append(file)
-
-print(totalFiles)
-
-"""
-for file in drupalLinks:
-    totalLinks.append(file.get('href'))
-
-sharepointLinks = files.findall(href=re.compile("/StanStatePublicDocs"))
-for link in sharepointLinks:
-    totalLinks.append(link.get('href'))
-
-print(totalLinks)
-"""
-
-"""
 
 filesTotal = len(files)
 
@@ -37,11 +14,13 @@ sharepointFiles = 'https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/'
 
 for i in range(filesTotal):
 
-    response = requests.get(files[i])
+    response = requests.get(filesTotal[i])
 
     # If requested page has been fetched, then the program will determine if the file is a Drupal 10, SharePoint, or other type of file
     if response.status_code == 200:
 
+        print(filesTotal[i])
+        '''
         # If the file is a Drupal 10 file, then the file will be downloaded
         if drupalFiles in files[i]:
             
@@ -55,36 +34,69 @@ for i in range(filesTotal):
                 file.write(response.content)
             
             print(str(filePath) + "has been downloaded.")
-
         # If the file is a SharePoint file, then the file will be downloaded
         else: 
-            if sharepointFiles in files[i]:
-
-                pattern = 'https://csustan.sharepoint.com/:b:/s/StanStatePublicDocs/'
-                string = files[i]
-                repl = '' # need to find out how file names are downloaded from SharePoint (check requests library)
-                #https://dev.to/sa11erto5n/download-manager-using-python-20h3
-
-                filePath = re.sub(pattern, repl, string)
-
-                with open(filePath, 'wb') as file:
-                    file.write(response.content)
-            
-                print(str(filePath) + "has been downloaded.")
-
-            else: 
-                pass
+            print("Not a Drupal file")
+        '''
 
     # If the requested page returns a different HTTP status code, then the terminal returns message
     # Drupal 7 files will return this message
     else:
         print('File not found.')
 
-
-"""
-
-
 '''
+
+indvFiles = re.findall("https://", files)
+
+# drupalFiles = 'https://www.csustan.edu/sites/default/files/'
+
+for indvFile in indvFiles:
+    response = requests.get(indvFile)
+
+    # If requested page has been fetched, then the program will determine if the file is a Drupal 10, SharePoint, or other type of file
+    if response.status_code == 200:
+
+        print(indvFile)
+
+        # If the file is a Drupal 10 file, then the file will be downloaded
+        if 'sites/default/files/' in files:
+
+            print("This is a Drupal file")
+
+            
+            pattern = 'https://www.csustan.edu/sites/default/files/' + '[0-9]+' + '-' + '[0-9]+' + '/'
+            string = indvFile
+            repl = ''
+
+            filePath = re.sub(pattern, repl, string)
+
+            with open(filePath, 'wb') as file:
+                file.write(response.content)
+            
+            print(str(filePath) + "has been downloaded.")
+            
+
+        # If the file is a SharePoint file, then the file will be downloaded
+        else: 
+            print("Not a Drupal file")
+
+    # If the requested page returns a different HTTP status code, then the terminal returns message
+    # Drupal 7 files will return this message
+    else:
+        print('File not found.')
+
+________
+
+for file in drupalLinks:
+    totalLinks.append(file.get('href'))
+
+sharepointLinks = files.findall(href=re.compile("/StanStatePublicDocs"))
+for link in sharepointLinks:
+    totalLinks.append(link.get('href'))
+
+print(totalLinks)
+________
+
 Accessing the file stored at the link address
 
 response = requests.get(files[i])
@@ -98,10 +110,7 @@ if response.status_code == 200:
     print('File downloaded successfully')
 else:
     print('Failed to download file')'
-'''
 
-
-'''
 MISCELLANEOUS
 
 print(files[i])
