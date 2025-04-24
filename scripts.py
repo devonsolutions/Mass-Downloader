@@ -1,40 +1,36 @@
 import requests
 import re
 import certifi
+from os import listdir
+from os.path import isfile, join
+import os
+import shutil
 
-# Limit of 1024 characters at a time
-# Solution: delete the last letter/character and hit enter
-# Possible Solution: alter input from txt file and use input to download
-files = input("What files would you like to download? ")
-files = files.split("https://")
+# add file path to downloads folder
+# filePath = 'D:\Downloads'
 
-fullnameFiles = []
+with open("input.txt", "r") as textFile:
+    lines = textFile.readlines()
+
+files = []
+
+for line in lines:
+    file = line.strip()
+    files.append(file)
 
 for file in files:
-    renamedFile = "https://" + file
-    fullnameFiles.append(renamedFile)
 
-# Need to delete b/c the first element is an invalid URL
-del fullnameFiles[0]
-
-for fullnameFile in fullnameFiles:
-
-    response = requests.get(fullnameFile, verify=certifi.where())
+    response = requests.get(file, verify=certifi.where())
 
     if response.status_code == 200:
-
-        # Maybe add another ifelse statement so that we can download status code [200] Drupal7 files, as well
-
-        # Works on D10 media that begins with the pattern listed below
-
         pattern = "https://www.csustan.edu/sites/default/files/" + '[0-9]+' + '-' + '[0-9]+' + '/'
         repl = ''
-        removeURL = re.sub(pattern, repl, fullnameFile)
-        filePath = "downloads" + str("/") + removeURL
+        removeURL = re.sub(pattern, repl, file)
+        fileName = removeURL
 
-        open(filePath, "wb").write(response.content)
+        open(fileName, "wb").write(response.content)
 
-        print(str(filePath) + "has been downloaded.")
+        print(str(fileName) + "has been downloaded.")
 
     elif response.status_code == 404:
         print("This file is not available.")
@@ -42,23 +38,36 @@ for fullnameFile in fullnameFiles:
     else:
        print("This is the page's status code: " + response.status_code)
 
-'''
-Examples for Downloading
+"""
+# Works on media that begins with the patterns listed below
 
-https://www.csustan.edu/sites/default/files/2023-01/new-standard-room-use-final.pdf
-https://www.csustan.edu/sites/default/files/2023-01/faculty-resources-flyer.pdf
-https://www.csustan.edu/sites/default/files/2023-01/sharelinkpro-flyer.pdf
-https://www.csustan.edu/sites/default/files/2023-01/standard-room-use-flyer.pdf
+        drupalPattern = "https://www.csustan.edu/sites/default/files/"
 
-Examples for 404 Errors
+        if drupalPattern in file:
 
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/via_classroom_training_guide.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/legacy_classroom_guide.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/oit_tech_tip_turn_off_teams_meeting_by_default.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/documents/global_protect_vpn_guide_sso.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/documents/global_protect_vpn_guide_sso_mac.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/documents/how_to_access_office.com_.pdf
-https://www.csustan.edu/sites/default/files/groups/Office%20of%20Information%20Technology/documents/how_to_access_microsoft_teams_on_personal_devices_web.pdf
+            d10Pattern = '[0-9]+' + '-' + '[0-9]+' + '/'
 
-'''
+            if d10Pattern in file: 
+                pattern = "https://www.csustan.edu/sites/default/files/" + '[0-9]+' + '-' + '[0-9]+' + '/'
+                repl = ''
+                removeURL = re.sub(pattern, repl, file)
+                fileName = removeURL
 
+                open(fileName, "wb").write(response.content)
+
+                print(str(fileName) + "has been downloaded.")
+
+            else:
+                pattern = "https://www.csustan.edu/sites/default/files/"
+                repl = ''
+                removeURL = re.sub(pattern, repl, file)
+                fileName = removeURL
+
+                open(fileName, "wb").write(response.content)
+
+                print(str(fileName) + "has been downloaded.")
+
+        else:
+            print("This page returns the status code 200, but is not a D7 or D10 page.")
+
+"""
