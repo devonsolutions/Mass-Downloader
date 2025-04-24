@@ -2,7 +2,11 @@ import requests
 import re
 import certifi
 
-files = input("What files would you like to download? ").split("https://")
+# Limit of 1024 characters at a time
+# Solution: delete the last letter/character and hit enter
+# Possible Solution: alter input from txt file and use input to download
+files = input("What files would you like to download? ")
+files = files.split("https://")
 
 fullnameFiles = []
 
@@ -26,7 +30,7 @@ for fullnameFile in fullnameFiles:
         pattern = "https://www.csustan.edu/sites/default/files/" + '[0-9]+' + '-' + '[0-9]+' + '/'
         repl = ''
         removeURL = re.sub(pattern, repl, fullnameFile)
-        filePath = "Downloads" + str("/") + removeURL
+        filePath = "downloads" + str("/") + removeURL
 
         open(filePath, "wb").write(response.content)
 
