@@ -23,6 +23,7 @@ for file in files:
     response = requests.get(file, verify=certifi.where())
 
     if response.status_code == 200:
+
         pattern = "https://www.csustan.edu/sites/default/files/" + '[0-9]+' + '-' + '[0-9]+' + '/'
         repl = ''
         removeURL = re.sub(pattern, repl, file)
@@ -69,5 +70,20 @@ for file in files:
 
         else:
             print("This page returns the status code 200, but is not a D7 or D10 page.")
+
+
+check for matching patterns
+
+string = "your_string_here"
+match = re.search(pattern, string)
+if match:
+    # Pattern found
+    print("Match found!")
+    print("Start index:", match.start())
+    print("End index:", match.end())
+    print("Matched string:", match.group())
+else:
+    # Pattern not found
+    print("Match not found.")
 
 """
