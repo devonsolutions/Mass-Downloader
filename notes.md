@@ -1,8 +1,8 @@
 Total: 6
 
 To-Do List
-- add certificate verification (https://urllib3.readthedocs.io/en/latest/user-guide.html#ssl)
 - use os library to redirect downloads to Download folder instead of inside massdownloader downloads folder
+- https://www.geeksforgeeks.org/automatically-organize-downloads-folder-in-python/
 
 Sources:
 Multiple inputs: https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-in-python/
@@ -13,3 +13,4 @@ https://www.csustan.edu/sites/default/files/2023-03/asi-vice-pres-finance-positi
 https://www.geeksforgeeks.org/simple-multithreaded-download-manager-in-python/
 HTTP response statues codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 https://uibakery.io/regex-library/url-regex-python
+Adding SSL Verification with Certifi: https://proxiesapi.com/articles/making-https-requests-in-python-with-requests-and-certifi
