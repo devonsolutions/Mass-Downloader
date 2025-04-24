@@ -1,5 +1,6 @@
 import requests
 import re
+import certifi
 
 files = input("What files would you like to download? ").split("https://")
 
@@ -14,9 +15,9 @@ del fullnameFiles[0]
 
 for fullnameFile in fullnameFiles:
 
-    response = requests.get(fullnameFile, verify=False)
+    response = requests.get(fullnameFile, verify=certifi.where())
 
-    if response.status_code == 200 or 403:
+    if response.status_code == 200:
 
         # Maybe add another ifelse statement so that we can download status code [200] Drupal7 files, as well
 
@@ -29,8 +30,11 @@ for fullnameFile in fullnameFiles:
 
         print(str(filePath) + "has been downloaded.")
 
+    elif response.status_code == 404:
+        print("This file is not available.")
+
     else:
-       print("File not available")
+       print("This is the page's status code: " + response.status_code)
 
 '''
 https://www.csustan.edu/sites/default/files/2023-01/new-standard-room-use-final.pdf
