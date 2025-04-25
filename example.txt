@@ -1,0 +1,11 @@
+https://www.csustan.edu/sites/default/files/password_standard.pdf
+https://www.csustan.edu/sites/default/files/patching_and_malicious_code_management.pdf
+https://www.csustan.edu/sites/default/files/payment_card_industry_data_security_standard_pci_dss_summary.pdf
+https://www.csustan.edu/sites/default/files/physical_security.pdf
+https://www.csustan.edu/sites/default/files/procedure_hr_off-boarding.pdf
+https://www.csustan.edu/sites/default/files/procedure_hr_on-boarding.pdf
+https://www.csustan.edu/sites/default/files/risk_assessment_program.pdf
+https://www.csustan.edu/sites/default/files/risk_assessment_questionnaire.xlsx
+https://www.csustan.edu/sites/default/files/risk_assessment_resource_inventory_server.xlsx
+https://www.csustan.edu/sites/default/files/risk_assessment_scheduler.xlsx
+https://www.csustan.edu/sites/default/files/risk_assessment_worksheets.xlsx
