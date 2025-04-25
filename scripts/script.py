@@ -2,7 +2,8 @@ import requests
 import re
 import certifi
 
-print("Copy and paste links into the input.txt file, then run script.py. \n If files aren't downloaded, check that the 'open(file...' line isn't commented out.")
+# Copy and paste links into the input.txt file, then run script.py.
+# If files aren't downloaded, check that the 'open(file...' line isn't commented out."
 
 with open("scripts/input.txt", "r") as textFile:
     lines = textFile.readlines()
