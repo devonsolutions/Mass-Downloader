@@ -1,2 +1,4 @@
 *.pdf
 *.pptx
+*input.txt
+scripts/input.txt
