@@ -2,6 +2,8 @@ import requests
 import re
 import certifi
 
+print("Copy and paste links into the input.txt file, then run script.py. \n If files aren't downloaded, check that the 'open(file...' line isn't commented out.")
+
 with open("scripts/input.txt", "r") as textFile:
     lines = textFile.readlines()
 
@@ -24,7 +26,7 @@ for file in files:
     if response.status_code == 200:
 
         file = "downloads/" + file
-        # open(file, "wb").write(response.content)
+        open(file, "wb").write(response.content)
 
         print("Downloaded: " + str(file))
 
