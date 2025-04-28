@@ -2,6 +2,7 @@ import requests
 import re
 import certifi
 
+# RUN INPUT.TXT
 # Copy and paste links into the input.txt file, then run script.py.
 # If files aren't downloaded, check that the 'open(file...' line isn't commented out."
 
