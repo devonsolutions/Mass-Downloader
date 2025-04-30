@@ -3,10 +3,6 @@ import re
 import certifi
 import os
 
-# RUN INPUT.TXT
-# Copy and paste links into the input.txt file, then run script.py.
-# If files aren't downloaded, check that the 'open(file...' line isn't commented out."
-
 with open("scripts/input.txt", "r") as textFile:
     lines = textFile.readlines()
 
