@@ -26,13 +26,10 @@ for file in files:
     file = re.sub(r"\d+|/", "", file)
     file = file.replace("-", "")
 
-    folder_path = "/Users/jerynnecenario/Downloads"
-    file = os.path.join(folder_path, file)
-
     if response.status_code == 200:
 
-        folder_path = "/Users/jerynnecenario/Downloads"
-        file = os.path.join(folder_path, file)
+        file_path = "/Users/jerynnecenario/Downloads"
+        file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
 
