@@ -1,6 +1,7 @@
 import requests
 import re
 import certifi
+import os
 
 # RUN INPUT.TXT
 # Copy and paste links into the input.txt file, then run script.py.
@@ -25,9 +26,14 @@ for file in files:
     file = re.sub(r"\d+|/", "", file)
     file = file.replace("-", "")
 
+    folder_path = "/Users/jerynnecenario/Downloads"
+    file = os.path.join(folder_path, file)
+
     if response.status_code == 200:
 
-        file = "downloads/" + file
+        folder_path = "/Users/jerynnecenario/Downloads"
+        file = os.path.join(folder_path, file)
+
         open(file, "wb").write(response.content)
 
         print("Downloaded: " + str(file))
