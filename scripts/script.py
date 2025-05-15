@@ -24,7 +24,7 @@ for file in files:
 
     if response.status_code == 200:
 
-        file_path = "\\Users\\Work Account\\Downloads\\Downloads"
+        file_path = "\\Users\\Work Account\\Downloads\\"
         file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
