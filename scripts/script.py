@@ -18,13 +18,13 @@ for file in files:
 
     url = "https://www.csustan.edu/sites/default/files/"
     file = file.replace(url, "")
-
+    
     file = re.sub(r"\d+|/", "", file)
     file = file.replace("-", "")
 
     if response.status_code == 200:
 
-        file_path = "/Users/jerynnecenario/Downloads"
+        file_path = "\\Users\\Work Account\\Downloads\\"
         file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
