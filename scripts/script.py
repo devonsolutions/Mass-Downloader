@@ -16,7 +16,7 @@ for file in files:
 
     response = requests.get(file, verify=certifi.where())
 
-    url = "https://www.csustan.edu/sites/default/files/"
+    url = "https://live-stan-state.pantheonsite.io/sites/default/files/"
     file = file.replace(url, "")
     
     file = re.sub(r"\d+|/", "", file)
@@ -24,7 +24,7 @@ for file in files:
 
     if response.status_code == 200:
 
-        file_path = "\\Users\\Work Account\\Downloads\\"
+        file_path = "/Users/jerynnecenario/Downloads/"
         file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
