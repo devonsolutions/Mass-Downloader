@@ -16,15 +16,19 @@ for file in files:
 
     response = requests.get(file, verify=certifi.where())
 
-    url = "https://live-stan-state.pantheonsite.io/sites/default/files/"
+    # replace with the link pattern, check for csustan.edu vs live-stan-state
+    url = "https://live-stan-state.pantheonsite.io/sites/default/files/FinancialServices/Documents/PurchasingAccountsPayable/ContractBidResults/"
     file = file.replace(url, "")
     
-    file = re.sub(r"\d+|/", "", file)
+    # d10: r"\d+|/" - removes numbers from the file name
+    # d7: "/" - can be used when there's no numbers in the file name
+    file = re.sub("/", "", file)
     file = file.replace("-", "")
 
     if response.status_code == 200:
 
-        file_path = "/Users/jerynnecenario/Downloads/"
+        # replace with appropriate file path
+        file_path = "/Users/jerynnecenario/Downloads/Bid & Bid Results"
         file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
