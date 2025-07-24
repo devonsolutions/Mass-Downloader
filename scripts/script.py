@@ -17,7 +17,7 @@ for file in files:
     response = requests.get(file, verify=certifi.where())
 
     # replace with the link pattern, check for csustan.edu vs live-stan-state
-    url = "https://live-stan-state.pantheonsite.io/sites/default/files/FinancialServices/Documents/PurchasingAccountsPayable/ContractBidResults/"
+    url = "https://csustan.edu/sites/default/files/2023-03/"
     file = file.replace(url, "")
     
     # d10: r"\d+|/" - removes numbers from the file name
@@ -28,7 +28,7 @@ for file in files:
     if response.status_code == 200:
 
         # replace with appropriate file path
-        file_path = "/Users/jerynnecenario/Downloads/Bid & Bid Results"
+        file_path = "/Users/jerynnecenario/Downloads/ABS"
         file = os.path.join(file_path, file)
 
         open(file, "wb").write(response.content)
