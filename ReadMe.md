@@ -1,4 +1,4 @@
-# Mass Downloader (Version 1.0)
+# Mass Downloader
 
 This is a mass downloader for Drupal 7 and Drupal 10 files. If a file is available (returns a 200 status code), then it will be downloaded into the "downloads" folder. If a file is unavailable (returns a 404 status code), then an error message will be printed to the terminal.
 
