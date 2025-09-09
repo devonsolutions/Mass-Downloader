@@ -1,0 +1,3 @@
+For Work Mac: "/Users/jerynnecenario/Downloads/"
+
+Work Account: "\\Users\\Work Account\\Downloads"
